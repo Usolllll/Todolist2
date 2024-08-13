@@ -1,0 +1,111 @@
+
+.title{
+  width: 700px;
+  height: 200px;
+  font-size: 80px;
+  /* background-color: blue; */
+  line-height: 200px;
+  text-align: center;
+  margin: auto;
+}
+.logIn{
+  width: 60px;
+  height: 25px;
+  font-size: 12px;
+  line-height: 10px;
+  position: relative;
+  left: 970px; 
+}
+.userName{
+  width: 120px;
+  height: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  position: relative;
+  left: 970px; 
+  text-align: center;
+  background-color: red;
+  border-bottom: 5px solid black;
+}
+.input_first{
+  /* background-color: red; */
+  width: 650px;
+  height: 20px;
+  padding-left: 5px;
+  line-height: 20px;
+  display: block;
+}
+.input_block{
+  width: 700px;
+  height: 35px;
+  margin: auto;
+  /* background-color: red; */
+  display: flex;
+}
+.input_second{
+  width: 300px;
+  height: 20px;
+  padding-left: 5px;
+  line-height: 20px;
+  display: block;
+}
+.button_add{
+  width: 40px;
+  height: 25px;
+  font-size: 12px;
+  line-height: 10px;
+}
+.body{
+  width: 700px;
+  height: 2000px;
+  margin: auto;
+
+
+}
+.body_active{
+  background-image: url(./imagine/nodate.jpg);
+  background-position: center 40px;
+}
+
+.incident {
+  width: 700px;
+  height: 50px;
+  display: flex;
+  line-height: 20px;
+  font-size: 20;
+  cursor: pointer;
+  /* background-color: black; */
+  justify-content: space-between;
+}
+.in_font{
+  width: 200px;
+  height: 50px;
+  font-size: 15px;
+  line-height: 4px;
+  color: red;
+  /* background-color: blue; */
+} 
+.in_font_normal{
+  width: 200px;
+  height: 50px;
+  font-size: 15px;
+  line-height: 4px;
+  color: black;
+} 
+.check_font{
+  width: 200px;
+  height: 50px;
+  font-size: 15px;
+  line-height: 4px;
+  color: rgba(128, 128, 128, 0.7);
+  text-decoration:line-through;
+  /* background-color: blue; */
+}
+.left{
+  display: flex;
+}
+.delete{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
