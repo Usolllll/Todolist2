@@ -44,15 +44,31 @@ function AfterLogIn() {
 
   const handlPublish=()=>{
     if(date!==''&&text!==''){
+      let id=Math.floor(Math.random()*100000)
     setCommentList([
       ...commentList,{
         item:text,
         date:date,
-        id:Math.random(),
+        id:id,
         check:false
       }
     ])
     setFlag(true)
+    const formData = {
+      text: text,
+      date: date,
+      id:id,
+      account:account
+    };
+    axios.post('http://localhost:80/AfterLogIn', formData )
+    .then(response => {
+      console.log('uccessful:', response.data);
+      alert('添加成功');
+    })
+    .catch(error => {
+      console.error('Error registering:', error);
+      alert('后端数据库添加失败');
+    });
   }
   else{
     alert('输错了')
@@ -64,6 +80,7 @@ function AfterLogIn() {
   function Item ({ item, date,did}){
     const timestamp = new Date(date).getTime()
     const[acheck,setCheck]=useState(false)
+
     const handlDel=(did)=>{
       console.log(did);
       if(acheck===true)
@@ -120,7 +137,7 @@ function AfterLogIn() {
 
       <div className='input_block'>
       <input type="date" className='input_second' value={date} onChange={(e)=>setDate(e.target.value)}></input>
-      <Button type="primary" className="button_add" style={{paddingRight:'40px'} } >添加</Button>
+      <Button type="primary" className="button_add" style={{paddingRight:'40px'} } onClick={handlPublish} >添加</Button>
       </div>
       
       

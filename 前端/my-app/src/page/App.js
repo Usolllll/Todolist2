@@ -35,15 +35,31 @@ function App() {
 
   const handlPublish=()=>{
     if(date!==''&&text!==''){
+      let id=Math.floor(Math.random()*100000)
     setCommentList([
       ...commentList,{
         item:text,
         date:date,
-        id:Math.random(),
+        id:id,
         check:false
       }
     ])
     setFlag(true)
+    const formData = {
+      text: text,
+      date: date,
+      id:id
+    };
+    axios.post('http://localhost:80', formData )
+    .then(response => {
+      console.log('uccessful:', response.data);
+      alert('添加成功');
+    })
+    .catch(error => {
+      console.error('Error registering:', error);
+      alert('后端数据库添加失败');
+    });
+
   }
   else{
     alert('输错了')

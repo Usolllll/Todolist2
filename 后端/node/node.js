@@ -37,12 +37,24 @@ app.delete('/delete/:id', (req, res) => {
   });
 });
 
+app.post('/', (req, res) => {
+  const { text, date,id } = req.body;
+    const insertUserQuery = `INSERT INTO main (item,date,id) VALUES (?, ?, ?)`;
+    db.query(insertUserQuery, [text, date,id ], (error, results) => {
+      if (error) {
+        console.error('Error', error);
+        res.status(500).send('add failed');
+        return;
+      }
+    });
+});
+
   //注册页面
 app.post('/register', (req, res) => {
   const { account, password } = req.body;
   const createTableQuery = `CREATE TABLE ?? (
     item VARCHAR(255),
-    data VARCHAR(255),
+    date VARCHAR(255),
     id INT      
 )`;
   // 查询数据库中是否已存在相同账号
@@ -124,6 +136,18 @@ app.delete('/AfterLogIn/delete/:id', (req, res) => {
       res.status(200).send('删除成功');
     }
   });
+});
+
+app.post('/AfterLogIn', (req, res) => {
+  const { text, date,id,account } = req.body;
+    const insertUserQuery = `INSERT INTO ?? (item,date,id) VALUES (?, ?, ?)`;
+    db.query(insertUserQuery, [account,text, date,id ], (error, results) => {
+      if (error) {
+        console.error('Error', error);
+        res.status(500).send('add failed');
+        return;
+      }
+    });
 });
 
 app.listen(80,()=>{
