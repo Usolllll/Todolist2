@@ -1,0 +1,54 @@
+Date : 2024-08-16 15:56:59
+Directory : c:\Users\86135\Desktop\Todolist\前端\my-app
+Total : 20 files,  20845 codes, 64 comments, 221 blanks, all 21130 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          4 |     19,561 |          0 |          4 |     19,565 |
+| CSS        |          5 |        576 |         29 |         94 |        699 |
+| JavaScript |          8 |        459 |         10 |         70 |        539 |
+| HTML       |          2 |        211 |         25 |         20 |        256 |
+| Markdown   |          1 |         38 |          0 |         33 |         71 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                   | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                      |         20 |     20,845 |         64 |        221 |     21,130 |
+| . (Files)                                                              |          3 |     19,558 |          0 |         35 |     19,593 |
+| public                                                                 |          2 |         45 |         23 |          2 |         70 |
+| src                                                                    |         15 |      1,242 |         41 |        184 |      1,467 |
+| src (Files)                                                            |          4 |        224 |          7 |         26 |        257 |
+| src\iconfont                                                           |          5 |        659 |         21 |        110 |        790 |
+| src\page                                                               |          6 |        359 |         13 |         48 |        420 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                               | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\86135\Desktop\Todolist\前端\my-app\README.md                    | Markdown   |         38 |          0 |         33 |         71 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\package-lock.json            | JSON       |     19,476 |          0 |          1 |     19,477 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\package.json                 | JSON       |         44 |          0 |          1 |         45 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\public\index.html            | HTML       |         20 |         23 |          1 |         44 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\public\manifest.json         | JSON       |         25 |          0 |          1 |         26 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\App.css                  | CSS        |        101 |          6 |          4 |        111 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\App.js                   | JavaScript |         88 |          0 |         16 |        104 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\iconfont\demo.css        | CSS        |        435 |         19 |         86 |        540 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\iconfont\demo_index.html | HTML       |        191 |          2 |         19 |        212 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\iconfont\iconfont.css    | CSS        |         16 |          0 |          4 |         20 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\iconfont\iconfont.js     | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\iconfont\iconfont.json   | JSON       |         16 |          0 |          1 |         17 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\index.js                 | JavaScript |         11 |          1 |          4 |         16 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\AfterLogIn.js       | JavaScript |        137 |          5 |         19 |        161 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\App.js              | JavaScript |        117 |          4 |         20 |        141 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\LogIn.css           | CSS        |         12 |          2 |          0 |         14 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\LogIn.js            | JavaScript |         42 |          0 |          4 |         46 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\Register.js         | JavaScript |         39 |          0 |          5 |         44 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\page\register.css        | CSS        |         12 |          2 |          0 |         14 |
+| c:\Users\86135\Desktop\Todolist\前端\my-app\src\router.js                | JavaScript |         24 |          0 |          2 |         26 |
+| Total                                                                  |            |     20,845 |         64 |        221 |     21,130 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
