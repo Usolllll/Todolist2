@@ -17,7 +17,8 @@ function LogIn(){
         password,  
       });  
       if (response.data.success) {  
-        navigate (`/AfterLogIn?account=${account}&password=${password}`);  
+        localStorage.setItem('token', response.data.token);
+        navigate (`/AfterLogIn?account=${response.data.token}&password=${password}`);  
       } else {  
         alert('登录失败，请检查账号和密码');  
       }  

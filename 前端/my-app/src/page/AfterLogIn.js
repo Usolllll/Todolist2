@@ -26,7 +26,11 @@ function AfterLogIn() {
   // })
   
   useEffect(() => {
+    localStorage.setItem('token', account);
     axios.get('http://localhost:80/AfterLogIn',{
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
       params: {
         account: account,
         password: password
@@ -58,9 +62,10 @@ function AfterLogIn() {
       text: text,
       date: date,
       id:id,
-      account:account
     };
-    axios.post('http://localhost:80/AfterLogIn', formData )
+    axios.post('http://localhost:80/AfterLogIn',formData,{headers: {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }} )
     .then(response => {
       console.log('uccessful:', response.data);
       alert('添加成功');
@@ -86,7 +91,9 @@ function AfterLogIn() {
       if(acheck===true)
       {
 
-        axios.delete(`http://localhost:80/AfterLogIn/delete/${did}`,{
+        axios.delete(`http://localhost:80/AfterLogIn/delete/${did}`,{      headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
           params: {
             account: account,
             password: password

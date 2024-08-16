@@ -4,6 +4,8 @@ const mysql =require('mysql')
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
+const jwt = require('jsonwebtoken');
+const expressJwt = require('express-jwt');
 
 const db=mysql.createPool({
   host:'127.0.0.1',
@@ -12,8 +14,10 @@ const db=mysql.createPool({
   database:'todolist'
 })
 
+const SECRET_KEY = 'todolist';
 const cors = require("cors");
 app.use(cors());
+app.use(expressJwt({ secret: SECRET_KEY, algorithms: ['HS256'] }).unless({ path: [/^\/register/, /^\/LogIn/] }));
 //主页面
 app.get('/', (req, res) => {
   db.query('select * from main',(err,result)=>{
@@ -70,7 +74,7 @@ app.post('/register', (req, res) => {
       res.status(400).send('Account already registered');
       return;
     }
-
+    
     const insertUserQuery = `INSERT INTO userinformation (account, password) VALUES (?, ?)`;
     db.query(insertUserQuery, [account, password], (error, results) => {
       if (error) {
@@ -94,7 +98,8 @@ app.post('/register', (req, res) => {
 });
 
 app.post('/LogIn', (req, res) => {  
-  const { account, password } = req.body;  
+  const { account,password } = req.body;
+ 
   const checkUserQuery = 'SELECT * FROM userinformation WHERE account = ? AND password = ?';  
   db.query(checkUserQuery, [account, password], (error, results) => {  
     if (error) {  
@@ -102,18 +107,18 @@ app.post('/LogIn', (req, res) => {
       res.status(500).send({ success: false, message: '数据库查询错误' });  
       return; 
     }  
-    if (results.length > 0) {  
-      res.status(200).send({ success: true, message: '登录成功' });  
+    if (results.length > 0) { 
+      const token = jwt.sign({ account }, SECRET_KEY, { expiresIn: '2h' });
+      res.status(200).send({ success: true, message: '登陆成功', token });
     } else {  
       res.status(401).send({ success: false, message: '账号或密码错误' });  
     }  
   });  
-});
-
+}); 
 
 afterLogQuery=`select * from ??`
 app.get('/AfterLogIn', (req, res) => {
-  const account = req.query.account;
+  const { account } = req.user;
   const password = req.query.password;
   console.log(account);
   afterLogQuery=`select * from ??`
@@ -126,7 +131,7 @@ app.get('/AfterLogIn', (req, res) => {
 
 app.delete('/AfterLogIn/delete/:id', (req, res) => {
   const { id } = req.params;
-  const account = req.query.account;
+  const { account } = req.user;
   const query = 'DELETE FROM ?? WHERE id = ?';
   db.query(query, [account,id], (err, results) => {
     if (err) {
@@ -138,8 +143,12 @@ app.delete('/AfterLogIn/delete/:id', (req, res) => {
   });
 });
 
+
+
 app.post('/AfterLogIn', (req, res) => {
-  const { text, date,id,account } = req.body;
+  const { text, date,id} = req.body;
+  const { account } = req.user;
+  console.log(req.user);
     const insertUserQuery = `INSERT INTO ?? (item,date,id) VALUES (?, ?, ?)`;
     db.query(insertUserQuery, [account,text, date,id ], (error, results) => {
       if (error) {
